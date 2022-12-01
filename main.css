@@ -1,0 +1,158 @@
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+/* 헤더 */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  /* border-bottom: 2px solid green; */
+  padding: 0 30px;
+  margin-bottom: 20px;
+}
+
+.logo a {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 64px;
+}
+
+.menu {
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(154, 143, 143);
+  /* border: 1px solid red; */
+  font-size: 24px;
+  min-width: 240px;
+  max-width: 400px;
+}
+
+.menu li {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.menu li:hover {
+  color: #fff;
+}
+
+.profile {
+  width: 40px;
+  height: 40px;
+  background-color: rgb(22, 68, 68);
+  border-radius: 50%;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* 메인 - 내 보관함에 있는 음악 */
+
+main {
+  margin: 0 40px;
+  /* border: 2px solid green; */
+}
+
+.mine h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.mine .container {
+  display: flex;
+  overflow: auto;
+}
+
+.mine .container::-webkit-scrollbar {
+  display: none;
+}
+
+.mine .container .playlist {
+  position: relative;
+  height: 400px;
+  margin-right: 24px;
+  /* border: 1px solid red; */
+}
+
+.mine .container .playlist .cover button {
+  position: absolute;
+  z-index: 2;
+  bottom: 30%;
+  right: 10%;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgb(15, 13, 13);
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.mine .container .playlist img {
+  width: 300px;
+  height: 300px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mine .container .playlist .cover {
+  transition: 0.3s;
+}
+
+.mine .container .playlist .cover:hover button {
+  opacity: 0.5;
+}
+
+.mine .container .playlist .cover button:hover {
+  transform: scale(1.2);
+}
+
+.mine .container .playlist button .play {
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 10px 0 10px 20px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.mine .container .playlist .list_name {
+  cursor: pointer;
+  margin: 8px 0;
+  font-size: 20px;
+}
+
+.mine .container .playlist .list_num {
+  font-size: 20px;
+}
+
+.mine .container .playlist .list_name:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .mine .container .playlist .list_name,
+  .mine .container .playlist .list_num {
+    font-size: 16px;
+  }
+
+  .mine .container .playlist img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .mine .container .playlist {
+    height: 300px;
+  }
+}
+
+/* 메인 - 빠른 선곡 */
