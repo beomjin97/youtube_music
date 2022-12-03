@@ -10,7 +10,6 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 64px;
-  /* border-bottom: 2px solid green; */
   padding: 0 30px;
   margin-bottom: 20px;
 }
@@ -28,7 +27,6 @@ header {
   justify-content: space-between;
   align-items: center;
   color: rgb(154, 143, 143);
-  /* border: 1px solid red; */
   font-size: 24px;
   min-width: 240px;
   max-width: 400px;
@@ -56,12 +54,11 @@ header {
 /* 메인 - 내 보관함에 있는 음악 */
 
 main {
-  margin: 0 40px;
-  /* border: 2px solid green; */
+  margin: 0 100px;
 }
 
 .mine h2 {
-  font-size: 28px;
+  font-size: 40px;
   font-weight: 700;
   margin-bottom: 20px;
 }
@@ -72,14 +69,24 @@ main {
 }
 
 .mine .container::-webkit-scrollbar {
-  display: none;
+  width: 12px;
+}
+
+.mine .container::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+.mine .container::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.503);
 }
 
 .mine .container .playlist {
   position: relative;
-  height: 400px;
+  height: 340px;
   margin-right: 24px;
-  /* border: 1px solid red; */
 }
 
 .mine .container .playlist .cover button {
@@ -97,8 +104,8 @@ main {
 }
 
 .mine .container .playlist img {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -140,6 +147,10 @@ main {
 }
 
 @media (max-width: 800px) {
+  main {
+    margin: 0 40px;
+  }
+
   .mine .container .playlist .list_name,
   .mine .container .playlist .list_num {
     font-size: 16px;
@@ -153,6 +164,91 @@ main {
   .mine .container .playlist {
     height: 300px;
   }
+
+  .mine .container::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* 메인 - 빠른 선곡 */
+.selection {
+  margin-top: 40px;
+}
+
+.selection p {
+  color: rgba(255, 255, 255, 0.503);
+}
+
+.selection h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 8px 0 20px 0;
+}
+
+.selection .container {
+  display: flex;
+  overflow: auto;
+}
+
+.selection .container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.selection .container::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+
+.selection .container::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.503);
+}
+
+.selection .container .col {
+  margin-right: 100px;
+}
+
+.selection .container .col .row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.selection .container .col .row .info {
+  display: flex;
+  min-width: 400px;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.selection .container .col .row img {
+  width: 48px;
+  height: 48px;
+  margin: 0 12px;
+  cursor: pointer;
+}
+
+.selection .container .col .row .info .singer_album {
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+
+.selection .container .col .row .info .singer_album:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.selection .container .col .row .info .title:hover {
+  cursor: pointer;
+}
+
+.selection .container .col .row .info .singer_album .singer:hover,
+.selection .container .col .row .info .singer_album .album:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* .selection .container .col .row .info .singer_album .singer,
+.selection .container .col .row .info .singer_album .album {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+} */
